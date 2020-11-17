@@ -1,0 +1,61 @@
+<div class="container-fuild">
+    <form #userform [formGroup]="userFormGroup" (ngSubmit)="onSubmit()" class="col-sm-12">
+
+        <h5 class="text-center">Register New User</h5>
+        <div class="form-group row w-100">
+            <label for="staticEmail" class="col-sm-2 col-form-label">First Name<i class="fa fa-star fa-1px" aria-hidden="true" style="color:red"></i></label>
+            <div class="col-sm-6">
+                <input id="title" type="text" class="form-control" formControlName='firstname'>
+            </div>
+            <div class="col-sm-3">
+                <div *ngIf="userFormGroup.controls['firstname'].invalid && (userbFormGroup.controls['firstname'].dirty || userFormGroup.controls['firstname'].touched)">
+                    <div *ngIf="userFormGroup.controls['firstname'].errors.required" class="float-left">
+                        <label class="text-danger">User's firstname cannot be empty.</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row w-100">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Last name<i class="fa fa-star fa-1px" aria-hidden="true" style="color:red"></i></label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" formControlName='lastname'>
+            </div>
+
+            <div class="col-sm-3">
+                <div *ngIf="userFormGroup.controls['lastname'].invalid && (userFormGroup.controls['lastname'].dirty || userFormGroup.controls['lastname'].touched)">
+                    <div *ngIf="userFormGroup.controls['location'].errors.required" class="float-left">
+                        <label class="text-danger">User's lastname cannot be empty.</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row w-100">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Email <i class="fa fa-star fa-1px" aria-hidden="true" style="color:red"></i></label>
+            <div class="col-sm-6">
+                <input type="email" class="form-control" id="comment" formControlName='email'></input>
+            </div>
+        </div>
+        <div class="form-group row w-100">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Password<i class="fa fa-star fa-1px" aria-hidden="true" style="color:red"></i></label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" formControlName='salary'>
+            </div>
+        </div>
+
+        <div class="form-group row w-100">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Confirm password<i class="fa fa-star fa-1px" aria-hidden="true" style="color:red"></i></label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" formControlName='salary'>
+            </div>
+        </div>
+
+        <div class="form-group row w-100 ">
+            <label for="staticEmail" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-6">
+                <input type="submit" class="btn btn-block btn-success" value="Register New User">
+            </div>
+        </div>
+    </form>
+</div>

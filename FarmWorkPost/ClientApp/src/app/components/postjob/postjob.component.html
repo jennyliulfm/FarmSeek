@@ -1,0 +1,64 @@
+<div class="container-fuild">
+    <form #jobform [formGroup]="jobFormGroup" (ngSubmit)="onSubmit()" class="col-sm-12">
+
+        <h5 class="text-center">Post A New Job</h5>
+        <div class="form-group row w-100">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Job Title<i class="fa fa-star fa-1px" aria-hidden="true" style="color:red"></i></label>
+            <div class="col-sm-6">
+                <input id="title" type="text" class="form-control" formControlName='title'>
+            </div>
+            <div class="col-sm-3">
+                <div *ngIf="jobFormGroup.controls['title'].invalid && (jobFormGroup.controls['title'].dirty || jobFormGroup.controls['title'].touched)">
+                    <div *ngIf="jobFormGroup.controls['title'].errors.required" class="float-left">
+                        <label class="text-danger">Job title is required</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row w-100">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Location<i class="fa fa-star fa-1px" aria-hidden="true" style="color:red"></i></label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" formControlName='location'>
+            </div>
+
+            <div class="col-sm-3">
+                <div *ngIf="jobFormGroup.controls['location'].invalid && (jobFormGroup.controls['location'].dirty || jobFormGroup.controls['title'].touched)">
+                    <div *ngIf="jobFormGroup.controls['location'].errors.required" class="float-left">
+                        <label class="text-danger">Job location is required</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row w-100">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-6">
+                <textarea class="form-control" id="comment" formControlName='description'></textarea>
+            </div>
+        </div>
+        <div class="form-group row w-100">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Salary<i class="fa fa-star fa-1px" aria-hidden="true" style="color:red"></i></label>
+            <div class="col-sm-6">
+                <input type="number" class="form-control" formControlName='salary'>
+            </div>
+        </div>
+
+        <div class="form-group row w-100">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Job Type</label>
+            <div class="col-sm-6">
+                <div class="radio" *ngFor="let type of jobTypes; let i = index" (change)="selectJobType(type)">
+                    <label><input type="radio" name="optradio" checked>{{ type }}</label>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group row w-100 ">
+            <label for="staticEmail" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-6">
+                <input type="submit" class="btn btn-block btn-success" value="Post A Job">
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,48 @@
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-warning border-bottom box-shadow mb-3">
+        <div class="container-fluid px-2">
+            <div class="col-sm-1">
+                <a class="navbar-brand" [routerLink]="['/home']">
+                    <img src="./assets/images/logo.png" style="width:64px;">
+                </a>
+            </div>
+            <div class="col-sm-8">
+                <div class="search-container justify-content-center">
+                    <form class="form-inline justify-content-center">
+                        <div class="row w-100">
+                            <div class="col-sm-10">
+                                <input class="form-control  w-100" type=" text " placeholder="Search.. " name="search ">
+                            </div>
+                            <div class="col-sm-2">
+                                <button class="btn btn-success w-100" type="submit ">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-sm-3 p-0  justify-content-between ">
+                <button class="navbar-toggler " type="button " data-toggle="collapse " data-target=".navbar-collapse " aria-label="Toggle navigation " [attr.aria-expanded]="isExpanded " (click)="toggle() ">
+          <span class="navbar-toggler-icon "></span>
+        </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse  justify-content-between " [ngClass]="{ show: isExpanded } ">
+                    <ul class="navbar-nav flex-grow ">
+                        <li class="nav-item " [routerLinkActive]="[ 'link-active'] " [routerLinkActiveOptions]="{ exact: true } ">
+                            <a class="nav-link text-dark " [routerLink]="[ '/'] ">Home</a>
+                        </li>
+                        <li class="nav-item " [routerLinkActive]="[ 'link-active'] ">
+                            <a class="nav-link text-dark " [routerLink]="[ '/signin'] ">Sign In</a>
+                        </li>
+                        <li class="nav-item " [routerLinkActive]="[ 'link-active'] ">
+                            <a class="nav-link text-dark " [routerLink]="[ '/post-jobs'] ">Post A Job</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </nav>
+</header>

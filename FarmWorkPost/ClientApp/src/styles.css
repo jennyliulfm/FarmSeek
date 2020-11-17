@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/* Provide sufficient contrast against white background */
+
+a {
+    color: #0366d6;
+}
+
+code {
+    color: #e01a76;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.bg-warning {
+    background-color: #ffe81f;
+}
+
+.fb {
+    background-color: #3B5998;
+    color: white;
+}
+
+.twitter {
+    background-color: #55ACEE;
+    color: white;
+}
+
+.google {
+    background-color: #dd4b39;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        visibility: hidden;
+    }
+}
+
+.card .card-footer {
+    background-color: #fff;
+}

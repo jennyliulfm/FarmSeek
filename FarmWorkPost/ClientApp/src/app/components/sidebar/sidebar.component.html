@@ -1,0 +1,53 @@
+<div class="sidebar">
+    <div class="container h-100">
+        <div class="card">
+            <article class="card-group-item">
+                <header class="card-header">
+                    <h6 class="title">Location </h6>
+                </header>
+                <div class="filter-content">
+                    <div class="card-body">
+                        <form>
+                            <label class="form-check" *ngFor="let city of cities ">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label">
+                                    {{ city.name}}
+                                </span>
+                            </label>
+
+
+                        </form>
+
+                    </div>
+                    <!-- card-body.// -->
+                </div>
+            </article>
+        </div>
+
+        <div class="card ">
+            <article class="card-group-item">
+                <header class="card-header">
+                    <h6 class="title">Types </h6>
+                </header>
+                <div class="filter-content">
+                    <div class="card-body">
+                        <form>
+                            <label class="form-check" *ngFor="let city of cities ">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label">
+                                    {{ city.name}}
+                                </span>
+                            </label>
+
+
+                        </form>
+
+                    </div>
+                    <!-- card-body.// -->
+                </div>
+            </article>
+        </div>
+
+    </div>
+
+</div>
